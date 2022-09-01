@@ -1,0 +1,26 @@
+
+.App{
+    color: white;
+    background-color: rgb(17, 17, 24);
+    margin: 0
+}
+
+.character{
+    margin: 0 auto;
+    margin-bottom: 1%;
+}
+
+.character:hover{
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+.item{
+    max-width: '100px';
+    min-height: '100px'
+}
+
+.item:hover{
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
