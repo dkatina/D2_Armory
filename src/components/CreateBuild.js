@@ -10,7 +10,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import { getItemDefinition } from '../api/tokenAuth'
 import { CancelToken } from 'apisauce'
-import { CircularProgress } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
