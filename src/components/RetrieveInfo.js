@@ -14,8 +14,9 @@ import { useSearchParams } from 'react-router-dom'
 //useSearchParams
 
 export default function RetrieveInfo() {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const mycode = searchParams.get("code")
+
     console.log(mycode)
    
     const {token, setToken, dMemType, setDMemType, dMemId, setDMemId, setCharacterId} = useContext(AppContext)

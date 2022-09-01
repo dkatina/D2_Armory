@@ -10,7 +10,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import { getItemDefinition } from '../api/tokenAuth'
 import { CancelToken } from 'apisauce'
-import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import { TextField } from '@mui/material'
@@ -28,14 +27,14 @@ const initialValues={
 
 export default function CreateBuild() {
 
-  const {token, characterId, storedInventory, setStoredInventory, storedVault, setStoredVault} = useContext(AppContext)
+  const {token, characterId} = useContext(AppContext)
     const [helmetDefs, setHelmetDefs] = useState('')
     const [gauntletDefs, setGauntletDefs] = useState('')
     const [chestDefs, setChestDefs] = useState('')
     const [legDefs, setLegDefs] = useState('')
     const [vaultItemDefs, setVaultItemDefs] = useState('')
 
-    const navigate = useNavigate()
+    
 
     const characterItems = useGetCharacterItems(token, characterId)
     
@@ -178,7 +177,7 @@ export default function CreateBuild() {
 
     if(!vaultItemDefs && equippable){getVaultDefs(equippable)}
 
-    let vaultArmor = []
+
     let totalHelmets = []
     let totalGauntlets = []
     let totalChests = []
@@ -188,7 +187,7 @@ export default function CreateBuild() {
         const vaultLegs = vaultItemDefs?.filter(item => item.itemTypeDisplayName === 'Leg Armor')
         const vaultChest = vaultItemDefs?.filter(item => item.itemTypeDisplayName === 'Chest Armor')
         const vaultHelmet = vaultItemDefs?.filter(item => item.itemTypeDisplayName === 'Helmet')
-        vaultArmor = vaultArmor.concat(vaultGauntlets, vaultLegs, vaultChest, vaultHelmet)
+        
         totalHelmets = totalHelmets.concat(vaultHelmet, helmetDefs, eHelmetDef)
         totalGauntlets = totalGauntlets.concat(vaultGauntlets, gauntletDefs, eGauntletsDef)
         totalChests = totalChests.concat(vaultChest, chestDefs, eChestDef)
@@ -205,9 +204,6 @@ export default function CreateBuild() {
     const [buildGauntlets, setBuildGauntlets] = useState('')
     const [buildChest, setBuildChest] = useState('')
     const [buildLegs, setBuildLegs] = useState('')
-
-
-    const handleItemSelect = () =>{}
 
     const handleHelmetSelect =(helmet)=>{
       setBuildHelmet(helmet)

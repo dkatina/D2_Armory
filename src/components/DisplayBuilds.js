@@ -148,7 +148,7 @@ export default function DisplayBuilds() {
                     
             ))}
             </List>
-            <IconButton aria-lable="add build" sx={{display:'block',mx: 'auto'}} onClick={()=>{navigate('/createbuild')}}>
+            <IconButton sx={{display:'block',mx: 'auto'}} onClick={()=>{navigate('/createbuild')}}>
                 <AddCircleOutlineIcon sx={{fontSize: '40px', color:'white'}}/>
             </IconButton>
 

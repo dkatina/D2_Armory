@@ -14,7 +14,7 @@ import { CircularProgress } from '@mui/material';
 
 
 export default function VaultItems() {
-    const {token, storedVault, setStoredVault} = useContext(AppContext)
+    const {token} = useContext(AppContext)
     const [vaultItemDefs, setVaultItemDefs] = useState('')
 
     const navigate = useNavigate()

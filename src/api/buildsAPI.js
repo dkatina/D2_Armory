@@ -19,17 +19,14 @@ export const getBuilds = async (characterId, cancelToken ) =>{
 }
 
 export const createBuild = async (build, cancelToken) =>{
-    let error
     let message
     console.log('within wrapper', build)
     const response = await dbNoAuth(cancelToken).post('/build', build)
     if (response.ok){
         message = response
-    }else{
-        error = "Could not create Build"
     }
     return{
-        response
+        message
     }
 }
 
@@ -50,15 +47,9 @@ export const editBuild = async (buildId, buildEdits, cancelToken) =>{
 }
 
 export const deleteBuild = async (buildId, cancelToken) =>{
-    let error
-    let message
 
     const response = await dbNoAuth(cancelToken).delete(`/build/${buildId}`)
-    if (response.ok){
-        message = response
-    }else{
-        error = "Could not Delete Build"
-    }
+  
     return{
         response
     }

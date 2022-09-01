@@ -156,6 +156,7 @@ export const getItemInstance = async (token, dMemType, dMemId, itemInstanceId, c
     }
 
     return {
+        error,
         item
     }
 }

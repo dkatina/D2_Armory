@@ -24,7 +24,7 @@ export default function useGetVaultItems(token) {
             }
             if (token){getMyVaultItems()}
 
-        },[token])
+        },[token, dMemId, dMemType])
 
     return response.vault
   

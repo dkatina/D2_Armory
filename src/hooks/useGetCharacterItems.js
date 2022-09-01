@@ -20,7 +20,7 @@ export default function useGetCharacterItems(token, characterId) {
             }
             if (token && characterId){getMyCharacterItems()}
 
-        },[token, characterId])
+        },[token, characterId, dMemId, dMemType])
 
     return response
   

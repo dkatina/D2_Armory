@@ -7,14 +7,14 @@ import useGetItemDefinition from '../hooks/useGetItemDefinition'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import { getCharacterItems, getItemDefinition } from '../api/tokenAuth'
+import { getItemDefinition } from '../api/tokenAuth'
 import { CancelToken } from 'apisauce'
 import { CircularProgress } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 
 
 export default function InventoryItems() {
-    const {token, characterId, storedInventory, setStoredInventory} = useContext(AppContext)
+    const {token, characterId} = useContext(AppContext)
     const [helmetDefs, setHelmetDefs] = useState('')
     const [gauntletDefs, setGauntletDefs] = useState('')
     const [chestDefs, setChestDefs] = useState('')

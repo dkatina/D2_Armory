@@ -16,11 +16,11 @@ export default function useGetItemStats(token, dMemType, dMemId, itemInstanceId)
                 const r = await getItemStats(token,dMemType, dMemId, itemInstanceId.itemInstanceId, source.token)
                 setResponse(r)
 
-                itemInstanceId = ''
+                
                 return ()=>{source.cancel()}
             }
             if(token && itemInstanceId?.itemInstanceId){getStats()}
-        },[token, itemInstanceId]
+        },[token, itemInstanceId, dMemId, dMemType]
     )
 
   return response?.item?.stats.data.stats

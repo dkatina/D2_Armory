@@ -120,7 +120,7 @@ const AppContextPovider = ({children})=>{
 
     const setVaultRefresh=(vaultRefresh)=>{
         localStorage.setItem('vaultRefresh', JSON.stringify(vaultRefresh))
-        _setInventoryRefresh(vaultRefresh)
+        _setVaultRefresh(vaultRefresh)
     }
 
     const setStoredInventory=(storedInventory)=>{
