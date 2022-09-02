@@ -17,12 +17,12 @@ function App() {
       <NavBar>
 
         <Routes>
-          <Route path='/' element={<HomeView/>}/>
+          <Route path='/home' element={<HomeView/>}/>
           <Route path='/inventory' element={<InventoryView/>}/>
           <Route path='/pick-character' element={<PickCharacterView/>}/>
           <Route path='/vault' element={<VaultView/>}/>
           <Route path='/createbuild' element={<CreateBuildsView/>}/>
-          <Route path='/authorizing/' element={<Welcome/>}/>
+          <Route path='/' element={<Welcome/>}/>
           <Route path='/inspect-item/:itemId' element={<InspectView/>}/>
           <Route path='/builds' element={<BuildsView/>}/>
           

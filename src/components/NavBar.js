@@ -94,7 +94,7 @@ export default function NavBar({ children }) {
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          <Link to='/' style={{textDecoration:'none', flexGrow: 1}}>
+          <Link to='/home' style={{textDecoration:'none', flexGrow: 1}}>
             <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div" color="white">
               Destiny 2 Armory
             </Typography>
