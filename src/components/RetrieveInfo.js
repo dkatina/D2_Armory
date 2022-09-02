@@ -21,7 +21,7 @@ export default function RetrieveInfo() {
 
     console.log(mycode)
    
-    const {token, setToken, dMemType, setDMemType, dMemId, setDMemId, setCharacterId} = useContext(AppContext)
+    const {token, setToken, dMemType, setDMemType, dMemId, setDMemId, setCharacterId, setUsername} = useContext(AppContext)
     const navigate = useNavigate()
 
     const myToken = useGetToken(mycode)
@@ -34,6 +34,7 @@ export default function RetrieveInfo() {
     if(myDMem.dMemId){
         setDMemType(myDMem.dMemType)
         setDMemId(myDMem.dMemId)
+        setUsername(myDMem.username)
     }
 
     let myChars = useGetCharacters(token, dMemType, dMemId)

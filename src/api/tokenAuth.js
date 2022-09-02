@@ -27,11 +27,13 @@ export const getDestinyId = async (token, membershipId, cancelToken) =>{
     let error;
     let dMemType;
     let dMemId
+    let username
 
     const response = await tokenAuth(token, cancelToken).get(`/Platform/Destiny2/254/Profile/${membershipId}/LinkedProfiles/`)
     if (response.ok){
         dMemType = response.data.Response.profiles[0].membershipType
         dMemId = response.data.Response.profiles[0].membershipId
+        username = response.data.Response.profiles[0].displayName
     }else if (response.status === 401){
         error = "Invalid username or password"
     }else{
@@ -41,7 +43,8 @@ export const getDestinyId = async (token, membershipId, cancelToken) =>{
     return {
         error,
         dMemType,
-        dMemId
+        dMemId,
+        username
     }
     
 }

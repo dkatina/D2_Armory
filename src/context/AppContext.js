@@ -68,6 +68,13 @@ const AppContextPovider = ({children})=>{
         }
     }
 
+    const getUsernameFromLS=()=>{
+        let username = localStorage.getItem('username')
+        if(username){
+            return JSON.parse(username)
+        }
+    }
+
     
 
 
@@ -81,6 +88,7 @@ const AppContextPovider = ({children})=>{
     const [vaultRefresh, _setVaultRefresh] = useState(getVaultRefreshFromLS()??true)
     const [storedInventory, _setStoredInventory] = useState(getStoredInventoryFromLS()??'')
     const [storedVault, _setStoredVault] = useState(getStoredVaultFromLS()??'')
+    const [username, _setUsername] = useState(getUsernameFromLS()??'')
    
 
     //set user will be a function in the login paramater, the values returned by
@@ -133,6 +141,11 @@ const AppContextPovider = ({children})=>{
         _setStoredVault(storedVault)
     }
 
+    const setUsername=(username)=>{
+        localStorage.setItem('username', JSON.stringify(username))
+        _setUsername(username)
+    }
+
    
 
 
@@ -155,7 +168,9 @@ const AppContextPovider = ({children})=>{
         storedInventory,
         setStoredInventory,
         storedVault,
-        setStoredVault
+        setStoredVault,
+        username,
+        setUsername
 
        
 

@@ -22,6 +22,8 @@ import LockIcon from '@mui/icons-material/Lock';
 import BackpackIcon from '@mui/icons-material/Backpack';
 import SensorOccupiedIcon from '@mui/icons-material/SensorOccupied';
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 
 const drawerStuff = [
     {text:'Inventory', path:'/inventory', icon:BackpackIcon},
@@ -80,6 +82,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 export default function NavBar({ children }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const {username} = useContext(AppContext)
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -94,21 +97,23 @@ export default function NavBar({ children }) {
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
-          <Link to='/home' style={{textDecoration:'none', flexGrow: 1}}>
+          <Link to='/' style={{textDecoration:'none', flexGrow: 1}}>
             <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div" color="white">
               Destiny 2 Armory
             </Typography>
           </Link>
-          <a href='https://www.bungie.net/en/OAuth/Authorize?client_id=41150&response_type=code' style={{color: 'white', textDecoration: 'none'}}>Authorize</a>
+          {!username? '': <>
+          {username}
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerOpen}
             sx={{ ...(open && { display: 'none' }) }}
-          >
+            >
             <MenuIcon />
-          </IconButton>
+          </IconButton></>}
+
         </Toolbar>
       </AppBar>
       <Main open={open}>
