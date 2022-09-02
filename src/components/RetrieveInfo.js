@@ -23,6 +23,7 @@ export default function RetrieveInfo() {
     const navigate = useNavigate()
 
     const myToken = useGetToken(mycode)
+    console.log(myToken)
     if(myToken){setToken(myToken)}
     
     
