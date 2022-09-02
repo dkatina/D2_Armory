@@ -6,6 +6,7 @@ export default function HomeView() {
     <MainDisplay>
     <div>
         <h1>Home</h1>
+        <p>nothing to see here... move along</p>
     </div>
     </MainDisplay>
   )

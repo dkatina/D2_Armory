@@ -128,7 +128,7 @@ export default function InventoryItems() {
 
     if (!helmetDefs || !chestDefs || !gauntletDefs || !legDefs){
       return (
-          <Box sx={{marginLeft: '48%', marginTop: '40%'}}>
+          <Box sx={{marginLeft: '49%', marginTop: '30%'}}>
               <CircularProgress sx={{mx: 'auto'}}/>
           </Box>
       )
@@ -140,14 +140,14 @@ export default function InventoryItems() {
       <h3>Equipped</h3>
       <List sx={{display: 'flex'}}>
             <ListItem  disablePadding >
-            <ListItemButton onClick={()=>{handleItemSelect(eHelmet.itemInstanceId, eHelmet.itemHash, 'equipped')}} sx={{mx: 'auto', mb: 1, border: 5, borderColor: 'gray'}} style={{backgroundImage: `url(https://bungie.net${eHelmetDef?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px', mx: 'auto'}}>
+            <ListItemButton className="gearButton" onClick={()=>{handleItemSelect(eHelmet.itemInstanceId, eHelmet.itemHash, 'equipped')}} sx={{mx: 'auto', mb: 1, border: 5, borderColor: 'gray'}} style={{backgroundImage: `url(https://bungie.net${eHelmetDef?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px', mx: 'auto'}}>
               <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '75px'}}>
               </Box>  
             </ListItemButton>
           </ListItem>
 
           <ListItem disablePadding>
-            <ListItemButton onClick={()=>{handleItemSelect(eGauntlets.itemInstanceId, eGauntlets.itemHash, 'equipped')}} sx={{mx: 'auto', mb: 1, border: 5, borderColor: 'gray'}} style={{backgroundImage: `url(https://bungie.net${eGauntletsDef?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px', mx: 'auto'}}>
+            <ListItemButton className="gearButton" onClick={()=>{handleItemSelect(eGauntlets.itemInstanceId, eGauntlets.itemHash, 'equipped')}} sx={{mx: 'auto', mb: 1, border: 5, borderColor: 'gray'}} style={{backgroundImage: `url(https://bungie.net${eGauntletsDef?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px', mx: 'auto'}}>
               <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '75px'}}>
                 
               </Box>  
@@ -155,7 +155,7 @@ export default function InventoryItems() {
           </ListItem>
 
           <ListItem  disablePadding>
-            <ListItemButton onClick={()=>{handleItemSelect(eChest.itemInstanceId, eChest.itemHash, 'equipped')}} sx={{mx: 'auto', mb: 1, border: 5, borderColor: 'gray'}} style={{backgroundImage: `url(https://bungie.net${eChestDef?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px', mx: 'auto'}}>
+            <ListItemButton className="gearButton" onClick={()=>{handleItemSelect(eChest.itemInstanceId, eChest.itemHash, 'equipped')}} sx={{mx: 'auto', mb: 1, border: 5, borderColor: 'gray'}} style={{backgroundImage: `url(https://bungie.net${eChestDef?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px', mx: 'auto'}}>
               <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '75px'}}>
                 
               </Box>  
@@ -163,7 +163,7 @@ export default function InventoryItems() {
           </ListItem>
 
           <ListItem  disablePadding>
-            <ListItemButton onClick={()=>{handleItemSelect(eLegs.itemInstanceId, eLegs.itemHash, 'equipped')}} sx={{mx: 'auto', mb: 1, border: 5, borderColor: 'gray'}} style={{backgroundImage: `url(https://bungie.net${eLegsDef?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px', mx: 'auto'}}>
+            <ListItemButton className="gearButton" onClick={()=>{handleItemSelect(eLegs.itemInstanceId, eLegs.itemHash, 'equipped')}} sx={{mx: 'auto', mb: 1, border: 5, borderColor: 'gray'}} style={{backgroundImage: `url(https://bungie.net${eLegsDef?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px', mx: 'auto'}}>
               <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '75px'}}>
                 
               </Box>  
@@ -175,7 +175,7 @@ export default function InventoryItems() {
         <hr style={{maxWidth: '350px', textAlign: 'left', marginLeft: 0}}/>
       <List style={{display: 'flex',flexDirection: 'row', maxWidth: '350px', flexWrap:'wrap'}}>
         {helmetDefs?.map((item) => (
-            <ListItemButton key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'inventory')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
+            <ListItemButton className="gearButton" key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'inventory')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
                 <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '75px'}}>
                 
                 </Box>  
@@ -186,7 +186,7 @@ export default function InventoryItems() {
       <hr style={{maxWidth: '350px', textAlign: 'left', marginLeft: 0}}/>
       <List style={{display: 'flex',flexDirection: 'row', maxWidth: '350px', flexWrap:'wrap'}}>
         {gauntletDefs?.map((item) => (
-            <ListItemButton key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'inventory')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
+            <ListItemButton className="gearButton" key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'inventory')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
                 <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '75px'}}>
                 
                 </Box>  
@@ -197,7 +197,7 @@ export default function InventoryItems() {
       <hr style={{maxWidth: '350px', textAlign: 'left', marginLeft: 0}}/>
       <List style={{display: 'flex',flexDirection: 'row', maxWidth: '350px', flexWrap:'wrap'}}>
         {chestDefs?.map((item) => (
-            <ListItemButton key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'inventory')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
+            <ListItemButton className="gearButton" key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'inventory')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
                 <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '75px'}}>
                 
                 </Box>  
@@ -208,7 +208,7 @@ export default function InventoryItems() {
       <hr style={{maxWidth: '350px', textAlign: 'left', marginLeft: 0}}/>
       <List style={{display: 'flex',flexDirection: 'row', maxWidth: '350px', flexWrap:'wrap'}}>
         {legDefs?.map((item) => (
-            <ListItemButton key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'inventory')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
+            <ListItemButton className="gearButton" key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'inventory')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
                 <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '75px'}}>
                 
                 </Box>  

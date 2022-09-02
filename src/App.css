@@ -24,3 +24,29 @@
     transform: scale(1.02);
     box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
+
+
+
+.gridBox{
+ 
+    height: 100%;
+    border-radius: 15px;
+    padding: 3%;
+    background-color: rgba(0, 0, 0, 0.452)
+    
+}
+
+.characterBox{
+    height: 75vh;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    padding: 3%;
+    background-color: rgba(0, 0, 0, 0.452)
+}
+
+.gearButton:hover{
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}

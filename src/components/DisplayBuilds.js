@@ -119,10 +119,11 @@ export default function DisplayBuilds() {
                     </ListItem>
                     ))}
                 </List>
-                <Button onClick={()=>{setBuildDefs('')}}>Back</Button>
-                <Button onClick={()=>{handleEquip(selectedBuild)}}>Equip</Button>
-                <Button onClick={()=>{handleDelete(selectedBuild)}}>Delete</Button>
-
+                <Box sx={{mx: 'auto', display: 'flex', justifyContent: 'center'}}>
+                <Button sx={{mr: 1}} variant='contained' onClick={()=>{setBuildDefs('')}}>Back</Button>
+                <Button sx={{mr: 1}} variant='contained' onClick={()=>{handleEquip(selectedBuild)}}>Equip</Button>
+                <Button sx={{}} variant='contained' onClick={()=>{handleDelete(selectedBuild)}}>Delete</Button>
+                </Box>
             </Box>
             
 

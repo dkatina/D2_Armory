@@ -71,7 +71,7 @@ export default function VaultItems() {
 
     if (vaultArmor?.length < 1){
     return (
-        <Box sx={{marginLeft: '48%', marginTop: '40%'}}>
+        <Box sx={{marginLeft: '49%', marginTop: '30%'}}>
             <CircularProgress sx={{mx: 'auto'}}/>
         </Box>
     )
@@ -83,7 +83,7 @@ export default function VaultItems() {
     <div>Behold.....My Stuff
         <List style={{display: 'flex',flexDirection: 'row', maxWidth: '1000px', flexWrap:'wrap'}}>
         {vaultArmor?.map((item) => (
-            <ListItemButton key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'vault')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
+            <ListItemButton className="gearButton" key={item.itemInstanceId} onClick={()=>{handleItemSelect(item.itemInstanceId, item.itemHash, 'vault')}} sx={{ m: 1, border: 5, borderColor: 'gray', borderRadius: '4px'}} style={{backgroundImage: `url(https://bungie.net${item?.displayProperties.icon})`, backgroundSize: 'cover', maxWidth: '100px', minHeight: '100px'}}>
                 <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '50px'}}>
                 
                 </Box>  
