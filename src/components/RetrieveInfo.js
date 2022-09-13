@@ -92,7 +92,18 @@ export default function RetrieveInfo() {
                 <Box className="gridBox">
                 <h1>Development</h1>
                 <hr></hr>
-                <p>Alot is coming stay tuned</p>
+                <ul style={{overflowY: 'scroll'}}>
+                    <li>Dynamic Build Stat Display on Create Page</li>
+                    <li>Better Single Item Inspect</li>
+                    <li>Add Subclasses</li>
+                    <li>Add Build background image based on subclass</li>
+                    <li>Show Build Stats on short and indepth display</li>
+                    <li>Bring in Mods</li>
+                    <li>Bring in subclass fragments</li>
+                    <li>Shaders</li>
+                    <li>Add character Icons</li>
+                    <li>Fix character select screen</li>
+                </ul>
                 </Box>
               </Grid>
               </Grid>
